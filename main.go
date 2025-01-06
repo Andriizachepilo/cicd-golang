@@ -1,22 +1,12 @@
 package main
 
-import "fmt"
+import (
+    "github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
+    "github.com/Andriizachepilo/cicd-golang/cicd" 
+)
 
 func main() {
-var nam string = "hello" 
-name(nam)
+    plugin.Serve(&plugin.ServeOpts{
+        ProviderFunc: cicd.Provider,
+    })
 }
-
-func name(name string) (string) {
-return surname(name,"mysurname")
-}
-
-func surname(surname,nam string) (string) {
-cons := surname + nam
-fmt.Print(cons)
-return cons
-}
-
-// func usernameLength(string []string) {
-
-// }
